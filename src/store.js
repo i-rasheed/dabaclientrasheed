@@ -13,8 +13,8 @@ const initialState = {
   },
 };
 const reducer = combineReducers({
-  userSignin: userSigninReducer,
   userRegister: userRegisterReducer,
+  userSignin: userSigninReducer,
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

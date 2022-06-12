@@ -4,6 +4,8 @@ import { register } from "../../actions/userActions";
 import SidePage from "../../components/SidePage/SidePage";
 import MessageBox from "../../components/MessageBox/MessageBox";
 import { useNavigate } from "react-router-dom";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Oval } from "react-loader-spinner";
 
 import "../SignUp/SignUp.css";
 
@@ -36,7 +38,7 @@ export default function SignUp() {
 
   const userRegister = useSelector((state) => state.userRegister);
   const { loading, error } = userRegister;
-
+  console.log(loading);
   const submitHandler = (e) => {
     e.preventDefault();
     const { firstName, lastName, email, password } = values;
@@ -51,7 +53,7 @@ export default function SignUp() {
   };
 
   const goToHome = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   let word;
@@ -61,24 +63,25 @@ export default function SignUp() {
     word = "Show";
   }
 
-  let btnText;
-  if (loading) {
-    btnText = "Loading...";
-  } else {
-    btnText = "Create account";
-  }
-
   return (
     <div className='signup-wrapper'>
+      {loading && <div id='overlay'></div>}
+
       <SidePage />
+      {loading && (
+        <div className='spinner'>
+          <Oval height='40' width='40' color='red' />
+        </div>
+      )}
       <form onSubmit={submitHandler}>
         <span className='cancel-btn' onClick={() => goToHome()}>
           X
         </span>
 
         <h3>Sign Up</h3>
-        {msg && <MessageBox error={msg} />}
-        {error && <MessageBox error={error} />}
+
+        <span>{msg && <MessageBox error={msg} />}</span>
+        <span>{error && <MessageBox error={error} />}</span>
         <div className='form-group'>
           <label htmlFor='firstName'>First Name</label>
           <br />
@@ -136,7 +139,7 @@ export default function SignUp() {
           </span>
         </div>
         <button type='submit' className='create-btn'>
-          {btnText}
+          Create account
         </button>
         <p className='have-acc-text'>
           Already own an account?

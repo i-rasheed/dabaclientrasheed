@@ -1,4 +1,4 @@
-import { Axios } from "axios";
+import Axios from "axios";
 
 import {
   USER_REGISTER_REQUEST,
@@ -26,6 +26,7 @@ export const register =
           password,
         }
       );
+      console.log(data);
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
       dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
       sessionStorage.setItem("userInfo", JSON.stringify(data));
@@ -48,6 +49,7 @@ export const signin = (email, password) => async (dispatch) => {
       "https://dabaserverrasheed.herokuapp.com/users/login",
       { email, password }
     );
+
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     sessionStorage.setItem("userInfo", JSON.stringify(data));
     document.location.href = "/dashboard";
@@ -55,8 +57,8 @@ export const signin = (email, password) => async (dispatch) => {
     dispatch({
       type: USER_SIGNIN_FAIL,
       payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
+        error.response && error.response.data.msg
+          ? error.response.data.msg
           : "Something went wrong",
     });
   }
@@ -67,5 +69,5 @@ export const signout = () => (dispatch) => {
   sessionStorage.removeItem("cartItems");
   sessionStorage.removeItem("shippingAddress");
   dispatch({ type: USER_SIGNOUT });
-  document.location.href = "/signin";
+  document.location.href = "/login";
 };

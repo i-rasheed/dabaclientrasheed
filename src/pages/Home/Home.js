@@ -11,8 +11,8 @@ export default function Home() {
     navigate("/register");
   };
 
-  const goToHome = () => {
-    navigate("/");
+  const goToLogin = () => {
+    navigate("/login");
   };
 
   return (

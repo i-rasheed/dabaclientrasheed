@@ -4,6 +4,8 @@ import { signin } from "../../actions/userActions";
 import SidePage from "../../components/SidePage/SidePage";
 import MessageBox from "../../components/MessageBox/MessageBox";
 import { useNavigate } from "react-router-dom";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Oval } from "react-loader-spinner";
 
 import "../SignIn/SignIn.css";
 
@@ -38,11 +40,12 @@ export default function SignIn() {
   };
 
   const goToHome = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   const userSignin = useSelector((state) => state.userSignin);
   const { loading, error } = userSignin;
+  console.log(error);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -57,16 +60,15 @@ export default function SignIn() {
     word = "Show";
   }
 
-  let btnText;
-  if (loading) {
-    btnText = "Loading...";
-  } else {
-    btnText = "Login to your account";
-  }
-
   return (
     <div className='signup-wrapper'>
+      {loading && <div id='overlay'></div>}
       <SidePage />
+      {loading && (
+        <div className='spinner'>
+          <Oval height='40' width='40' color='red' />
+        </div>
+      )}
       <form onSubmit={submitHandler}>
         <span className='cancel-btn' onClick={() => goToHome()}>
           X
@@ -106,7 +108,7 @@ export default function SignIn() {
         </div>
         <span className='forgot-pword'>Forgot password?</span>
         <button type='submit' className='create-btn'>
-          {btnText}
+          Login to your account
         </button>
         <p className='have-acc-text'>
           Don’t own an account?
