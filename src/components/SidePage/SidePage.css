@@ -1,0 +1,38 @@
+.side-page{
+    width: 60%;
+    background: black;
+    text-align: center;
+    /* height: 100vh; */
+    padding-top: 1rem;
+}
+
+.splash{
+    margin-bottom: 2.5rem;
+    width: 100%;
+    max-width: 23rem;
+    margin-right: 3rem;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.side-page-p{
+    text-align: center;
+    color: #747474;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .side-page{
+      display: none;
+    }
+  }

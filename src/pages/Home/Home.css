@@ -1,0 +1,148 @@
+.home-wrapper{
+width: 40%;
+padding: 2.5rem 0.5rem 5rem;
+
+}
+
+.home-header{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    color: #202552;
+    
+}
+
+.home-paragraph{
+    text-align: center;
+    font-size: 16px;
+    /* line-height: 24px; */
+    line-height: 14px;
+    font-weight: 400;
+    color:#747474;
+}
+
+.home-para-red{
+color: red;
+margin-left: 3px;
+}
+
+.googlebtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-left: 3.4rem;
+    width: 70%;
+    height: 50px;
+    margin-bottom: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: #1D4F99;
+    border: none;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.continue-text{
+    margin-left: 4px;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* .hr-and-or{
+    display: flex;
+} */
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color:#747474;
+    margin-bottom: 3rem;
+    
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddcece;
+
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .5em;
+   
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .5em;
+  }
+
+  .create-acc{
+padding: 0.5rem 1.5rem;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+border-radius: 30px;
+width: 70%;
+height: 50px;
+margin-bottom: 0.5rem;
+margin-left: 3.4rem;
+background: #D8383A;
+border: none;
+cursor: pointer;
+color: white;
+outline: none;
+  }
+
+.login_btn{
+font-weight: 400;
+padding: 0.5rem 1.5rem;
+cursor: pointer;
+border-radius: 30px;
+height: 50px;
+margin-bottom: 4rem;
+margin-left: 9rem;
+font-size: 16px;
+line-height: 24px;
+border: none;
+background: none;
+}
+
+.browse{
+    background: none;
+    color: #D8383A;
+    border: 1px solid #D8383A;
+}
+
+@media screen and (max-width: 768px) {
+.side-page{
+  display: none;
+}
+.home-header{
+    width: 29rem;
+}
+
+.home-paragraph{
+    width: 23rem;
+    margin-left: 3rem;
+}
+.googlebtn{
+  width: 193%;
+  margin-left: 5.4rem;
+}
+
+.create-acc{
+width: 193%;
+margin-left: 5.4rem;
+}
+.login_btn{
+width: 16rem;
+}
+.separator {
+width: 28rem;
+}
+  }
