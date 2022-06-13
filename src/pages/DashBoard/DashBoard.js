@@ -15,7 +15,7 @@ export default function DashBoard() {
   return (
     <div className='dashbd-wrapper'>
       <div>DashBoard</div>
-      <h3 style={{ color: "black" }}>{userInfo.user.firstName}</h3>
+      <h3 style={{ color: "black" }}>{userInfo.firstName}</h3>
       <button className='logout-btn' onClick={signoutHandler}>
         logout
       </button>
