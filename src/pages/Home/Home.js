@@ -26,10 +26,9 @@ export default function Home() {
         <p className='home-paragraph'>
           By creating an account, you agree to your
           <span className='home-para-red'>
-            Terms of Service
-            <br />
-          </span>
-          <br /> and
+            Terms of <br /> Service
+          </span>{" "}
+          and
           <span className='home-para-red'>Privacy Policy</span>
         </p>
         <button className='googlebtn'>
