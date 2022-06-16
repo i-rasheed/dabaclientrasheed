@@ -68,7 +68,8 @@ margin-left: 3px;
   .separator::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid #ddcece;
+    border-bottom: 2px solid #ddcece;
+    
 
   }
   
