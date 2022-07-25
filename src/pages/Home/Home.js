@@ -20,7 +20,7 @@ export default function Home() {
       <SidePage />
       <div className='home-wrapper'>
         <h3 className='home-header'>
-          Your Money-Making Machine in
+          Your Money Machine in
           <br /> your Pocket
         </h3>
         <p className='home-paragraph'>
